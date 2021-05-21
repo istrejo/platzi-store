@@ -33,6 +33,14 @@
               type="number"
             />
           </mat-form-field>
+          <div *ngIf="priceField.errors && priceField.dirty">
+            <mat-error *ngIf="priceField.hasError('price_invalid')">
+              no te debes pasar de 10000
+            </mat-error>
+            <mat-error *ngIf="priceField.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -47,7 +55,9 @@
         </div>
       </div>
       <mat-card-actions>
-        <button mat-raised-button type="submit">Guardar</button>
+        <button [disabled]="form.invalid" mat-raised-button type="submit">
+          Guardar
+        </button>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>
