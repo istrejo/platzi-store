@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 
 import { MaterialModule } from '../material/material.module';
+import { GroupPipe } from './pipes/group/group.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MaterialModule } from '../material/material.module';
     HeaderComponent,
     FooterComponent,
     CartComponent,
+    GroupPipe,
   ],
   imports: [CommonModule, RouterModule, MaterialModule, ReactiveFormsModule],
   exports: [
@@ -25,6 +27,7 @@ import { MaterialModule } from '../material/material.module';
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+    GroupPipe,
   ],
 })
 export class SharedModule {}
