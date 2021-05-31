@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "aplicaiones-angular": {
+      "hosting": {
+        "platzi-store": [
+          "aplicaiones-angular"
+        ]
+      }
+    }
+  }
+}
