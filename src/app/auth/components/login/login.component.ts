@@ -26,15 +26,20 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
     if (this.form.valid) {
       const value = this.form.value;
-      this.authService.createUser(value.email, value.password).then(() => {
-        this.router.navigate(['/auth/login']);
-      });
+      this.authService
+        .login(value.email, value.password)
+        .then(() => {
+          this.router.navigate(['/admin']);
+        })
+        .catch(() => {
+          alert('no es valido');
+        });
     }
   }
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      emai: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
   }
